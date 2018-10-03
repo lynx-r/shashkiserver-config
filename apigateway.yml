@@ -11,8 +11,8 @@ logging:
 management.endpoints.web.exposure.include: '*'
 
 spring:
-  aop:
-    proxy-target-class: true
+#  aop:
+#    proxy-target-class: true
   zipkin:
     baseUrl: http://localhost:9411/
   sleuth:
