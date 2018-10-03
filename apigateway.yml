@@ -3,6 +3,12 @@ logging:
     org:
       springframework:
         security: DEBUG
+        cloud.gateway: TRACE
+        http.server.reactive: DEBUG
+        web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+
+management.endpoints.web.exposure.include: '*'
 
 spring:
   aop:
@@ -17,6 +23,8 @@ spring:
 # For testing purposes, we are sampling all requests (1.0) but generally in production you should
 # sample only 10-20% of the data or write custome strategy to sample say only in case of 500 errors.
       percentage: 1.0
+  cloud:
+    gateway.discovery.locator.enabled: true
 
 # When enabled=false, traces log to the console. Comment to send to zipkin
 sample:
@@ -66,27 +74,27 @@ server:
 # Note that we don't proxy the calls to the authorization server. The reason being that
 # Spring cloud security would need to secure the api gateway before it can route the
 # requests using zuul
-zuul:
-  ignoredServices: '*'
-  routes:
-    user-service:
-      path: /user-service/**
-      stripPrefix: false
-      serviceId: user-webservice
-      sensitiveHeaders:
-    task-service:
-      path: /task-service/**
-      stripPrefix: false
-      serviceId: task-webservice
-      sensitiveHeaders:
-    user:
-      path: /api/loggedinuser/**
-      stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/
-    ui:
-      path: /**
-      stripPrefix: false
-      serviceId: web-portal
+#zuul:
+#  ignoredServices: '*'
+#  routes:
+#    user-service:
+#      path: /user-service/**
+#      stripPrefix: false
+#      serviceId: user-webservice
+#      sensitiveHeaders:
+#    task-service:
+#      path: /task-service/**
+#      stripPrefix: false
+#      serviceId: task-webservice
+#      sensitiveHeaders:
+#    user:
+#      path: /api/loggedinuser/**
+#      stripPrefix: true
+#      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/
+#    ui:
+#      path: /**
+#      stripPrefix: false
+#      serviceId: web-portal
 
 # Since our gateway is using Eureka (@EnableEurekaClient), the Gateway using Netfix Ribbon to make
 # the actual call. The ribbon call is wrapped within Hystrix so that we can handle any errors.

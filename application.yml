@@ -1,5 +1,9 @@
 mail:
   domain: gmail.com
-  
+
+spring:
+  jmx:
+    enabled: false
+
 logging:
   path: /app
