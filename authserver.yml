@@ -25,12 +25,13 @@ spring:
     username: root
     password:
     driver-class: com.mysql.jdbc.Driver
+    initialization-mode: always
 
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
-#    hibernate:
-#      ddl-auto: create
+    hibernate:
+      ddl-auto: none
 
 ---
 
