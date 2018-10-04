@@ -26,6 +26,7 @@ spring:
     password:
     driver-class: com.mysql.jdbc.Driver
     initialization-mode: always
+    type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
 
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
