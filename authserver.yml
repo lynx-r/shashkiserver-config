@@ -2,7 +2,8 @@
 # cookies for both the API gateway as well as the OAuth2 authorization server.
 server:
   port: 8899
-  contextPath: /userauth
+  servlet:
+    contextPath: /userauth
 
 eureka:
   client:
