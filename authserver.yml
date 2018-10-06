@@ -15,7 +15,7 @@ security:
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: TRACE
 
 # Datasource and JPA configuration to be used for storing the OAuth authorization details
 # and token store
