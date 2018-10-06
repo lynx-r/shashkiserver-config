@@ -44,6 +44,8 @@ authserver:
 # Remaining properties are used by the OAuth2 SSO to determine where the authorization server is and
 # what client crendentials to use to access that server.
 security:
+  basic:
+    enabled: false
   user:
     password: none
   oauth2:
