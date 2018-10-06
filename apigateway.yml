@@ -2,7 +2,7 @@ logging:
   level:
     org:
       springframework:
-        security: DEBUG
+        security: TRACE
         cloud.gateway: TRACE
         http.server.reactive: DEBUG
         web.reactive: DEBUG
