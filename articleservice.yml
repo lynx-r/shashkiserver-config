@@ -19,7 +19,7 @@ spring:
       percentage: 1.0
   boot.admin.client:
     url: http://shashki:8099/spring-admin
-    instance.serviceUrl: http://shashki:8765
+    instance.serviceUrl: http://shashki:8765/article
 
 management:
   endpoints:
