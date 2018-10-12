@@ -7,9 +7,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://shashki:8761/eureka/
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /article/actuator/health
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    health-check-url-path: /article/actuator/health
 
 spring:
   zipkin:
@@ -17,7 +17,9 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
-  boot.admin.client.url: http://shashki:8099
+  boot.admin.client:
+    url: http://shashki:8099
+    instance.health-url: /article/actuator
 
 management:
   endpoints:
