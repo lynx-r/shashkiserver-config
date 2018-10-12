@@ -1,8 +1,7 @@
 logging:
   level:
-    org:
-      springframework:
-        boot.admin: DEBUG
+    de.codecentric.boot:
+        admin: DEBUG
 
 server:
   port: 8081
