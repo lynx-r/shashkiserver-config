@@ -17,7 +17,7 @@ management:
     health:
       show-details: ALWAYS
 
-  security.roles: ROLE_ADMIN
+#  security.roles: ROLE_ADMIN
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
