@@ -5,7 +5,7 @@ server:
 # for server discovery
 eureka:
   instance:
-    hostname: localhost
+    hostname: shashki
   client:
     registerWithEureka: false
     fetchRegistry: false
