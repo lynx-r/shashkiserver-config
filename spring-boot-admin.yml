@@ -1,5 +1,7 @@
 server:
   port: 8099
+  servlet:
+    contextPath: /spring-admin
 
 eureka:
   client:
