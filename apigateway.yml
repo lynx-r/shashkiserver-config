@@ -80,10 +80,10 @@ zuul:
       stripPrefix: false
       serviceId: articleservice
       sensitiveHeaders:
-    spring-admin:
-      path: /spring-admin**
-      stripPrefix: false
-      serviceId: spring-boot-admin
+#    spring-admin:
+#      path: /spring-admin**
+#      stripPrefix: false
+#      serviceId: spring-boot-admin
     user:
       path: /api/loggedinuser/**
       stripPrefix: true
