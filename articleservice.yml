@@ -18,7 +18,6 @@ spring:
     sampler:
       percentage: 1.0
   boot.admin.client:
-    url: http://shashki:8099
     instance.serviceUrl: http://shashki:8081/article
 
 management:
