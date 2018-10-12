@@ -30,6 +30,8 @@ management:
     health:
       show-details: ALWAYS
 
+  security.roles: ROLE_ADMIN
+
 # When enabled=false, traces log to the console. Comment to send to zipkin
 sample:
   zipkin:
