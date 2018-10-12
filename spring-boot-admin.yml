@@ -15,6 +15,11 @@ management:
     health:
       show-details: ALWAYS
 
+security:
+  user:
+    name: alex
+    password: password
+
 ---
 
 # task-webservice instance when used on Docker
