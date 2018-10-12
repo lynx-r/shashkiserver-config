@@ -81,7 +81,7 @@ zuul:
       serviceId: articleservice
       sensitiveHeaders:
     spring-admin:
-      path: /spring-admin/**
+      path: /spring-admin**
       stripPrefix: false
       serviceId: spring-boot-admin
     user:
