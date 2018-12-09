@@ -1,72 +1,29 @@
-logging:
-  level:
-    de.codecentric.boot:
-        admin: DEBUG
-
-server:
-  port: 8081
-  servlet:
-    contextPath: /article
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://shashki:8761/eureka/
-#  instance:
-#    leaseRenewalIntervalInSeconds: 10
-#    health-check-url-path: /article/actuator/health
+server.port: ${WEBAPI_PORT:40010}
 
 spring:
+  sleuth.sampler.probability: 1.0
   zipkin:
-    baseUrl: http://shashki:9411/
-  sleuth:
-    sampler:
-      percentage: 1.0
-  boot.admin.client:
-    url: http://shashki:8099/spring-admin
-    instance.serviceUrl: http://shashki:8765/article
+    baseUrl:  ${ZIPKIN_URL:http://mydomain:9411}
 
+eureka:
+  instance:
+    # to allow SBA access this service
+    metadata-map:
+      user.name: "actuator"
+      user.password: "{cipher}8f67106e070e0f99bc30f70e738a707e2d3c9f7855c1ecf26ec8932ce3fa4dbb"
+
+# expose actuator for SBA
 management:
   endpoints:
-    web:
-      exposure:
-        include: "*"
+    web.exposure.include: "*"
   endpoint:
     health:
       show-details: ALWAYS
 
-# When enabled=false, traces log to the console. Comment to send to zipkin
-sample:
-  zipkin:
-    enabled: true
-
-# Note that we will use the JWT token to get user data
-security:
-  oauth2:
-    resource:
-      jwt:
-        keyValue: |
-          -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhVny3DfQqdvQaPj6SJiiFfPRGH/5k3OiAXTCsmpKnL/GVKZpfFjT3LhN7xoj0DzJLTCOE94eOjIHipFzxrL00kBCZJ3HOornKDpTh17yPuqJI6DNmvJaRBbc3SVQsO0vndnDAeOBiv4euGHH97sPZYFqhmwM35PboqxeWaHrfgWcA5F8VFTp+HDPr26G4sv/UqkR1LsfRoD4gzNJswi00eWcNjeoEzy71023VECQYDytUg/wVqWOJnShWOJnCBnuzmjrtOCg6O6ecdHhVaiRI0//ZR71x2oDW5pe+kgVhhM29TH8SVRjbAFh35obN6ppcF3A7PFLf+euZTsmXMaahQIDAQAB
-          -----END PUBLIC KEY-----
-
----
-# task-webservice instance when used on Docker
-spring:
-  profiles: docker
-  zipkin:
-    baseUrl: http://zipkinserver:9411/
-
-eureka:
-  # Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get
-  # one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://eurekaregistry:8761/eureka/
-
-# Define the port where the API gateway server would be running. This could always be port 8080
-# since each docker container has it's own IP
-server:
-  port: 8080
+#Setting logging levels
+logging:
+  level:
+    com.netflix: ERROR
+    org.springframework.web: ERROR
+    org.springframework.security: ERROR
+    com.tictactoecorp: DEBUG
