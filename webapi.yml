@@ -1,4 +1,4 @@
-server.port: ${WEBAPI_PORT:40001}
+server.port: ${WEBAPI_PORT:40010}
 
 spring:
   sleuth.sampler.probability: 1.0
