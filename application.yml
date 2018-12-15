@@ -3,13 +3,6 @@ spring:
   zipkin:
     baseUrl:  ${ZIPKIN_URL:http://mydomain:9411}
 
-eureka:
-  instance:
-    # to allow SBA access this service
-    metadata-map:
-      user.name: "actuator"
-      user.password: "{cipher}8f67106e070e0f99bc30f70e738a707e2d3c9f7855c1ecf26ec8932ce3fa4dbb"
-
 # expose actuator for SBA
 management:
   endpoints:
