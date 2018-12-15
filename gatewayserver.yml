@@ -2,15 +2,14 @@ zuul:
   ignored-services: "*"
   prefix:  /api
   routes:
-    webapi:
-      path: /web/**
+    # для неавторизованных просмотр сайта
+    viewservice:
+      path: /view/**
       stripPrefix: true
-#    userservice:
-#      path: /user/**
-#      stripPrefix: true
-#    gameservice:
-#      path: /game/**
-#      stripPrefix: true
+    # для авторизованных редактирование
+    editservice:
+      path: /edit/**
+      stripPrefix: true
   sensitiveHeaders: Cookie,Set-Cookie
   debug.request: true
 
