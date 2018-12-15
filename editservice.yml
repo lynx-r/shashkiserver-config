@@ -1,4 +1,4 @@
-server.port: ${WEBAPI_PORT:40001}
+server.port: ${WEBAPI_PORT:40010}
 
 #Setting logging levels
 logging:
