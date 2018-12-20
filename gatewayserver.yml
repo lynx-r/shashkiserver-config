@@ -12,9 +12,11 @@ spring:
               - "http://localhost:4000"
               - "http://shashki.online"
             allowedHeaders:
-              - *
+              - Access-Control-Allow-Origin
             allowedMethods:
-              - *
+              - GET
+              - POST
+              - PUT
       routes:
         - id: editservice
           uri: lb://editservice
