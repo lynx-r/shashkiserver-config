@@ -1,17 +1,23 @@
-zuul:
-  ignored-services: "*"
-  prefix:  /api
-  routes:
-    # для неавторизованных просмотр сайта
-    viewservice:
-      path: /view/**
-      stripPrefix: true
-    # для авторизованных редактирование
-    editservice:
-      path: /edit/**
-      stripPrefix: true
-  sensitiveHeaders: Cookie,Set-Cookie
-  debug.request: true
+server:
+  port: ${GATEWAY_SERVER_PORT:5555}
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:4200"
+              - "http://localhost:4000"
+              - "http://shashki.online"
+      routes:
+        - id: editservice
+          uri: lb://editservice
+          predicates:
+            - Path=/edit/**
+          filters:
+            - StripPrefix=1
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 21000
 ribbon:
