@@ -13,6 +13,7 @@ spring:
               - "http://shashki.online"
             allowedHeaders:
               - Content-Type
+              - Authorization
             allowedMethods:
               - GET
               - POST
