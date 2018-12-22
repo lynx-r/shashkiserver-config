@@ -1,5 +1,11 @@
 server.port: ${WEBAPI_PORT:40001}
 
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      database: ${MONGO_DATABASE:shashki}
+
 eureka:
   instance:
     # to allow SBA access this service
