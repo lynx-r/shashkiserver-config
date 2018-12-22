@@ -5,7 +5,7 @@ spring:
     mongodb:
       host: ${MONGO_HOST:localhost}
       database: ${MONGO_DATABASE:shashki}
-      port: 27017
+      port: ${MONGO_PORT:27017}
 
 eureka:
   instance:
