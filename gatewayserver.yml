@@ -35,6 +35,7 @@ ribbon:
 management:
   endpoints:
     web.exposure.exclude: "*"
+    web.exposure.include: "health"
   endpoint:
     health:
       show-details: never
