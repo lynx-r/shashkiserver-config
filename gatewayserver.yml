@@ -34,7 +34,7 @@ ribbon:
 # expose actuator for SBA
 management:
   endpoints:
-    web.exposure.include: "health"
+    web.exposure.include: health
   endpoint:
     health:
       show-details: never
