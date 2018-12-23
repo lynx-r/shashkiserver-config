@@ -30,3 +30,11 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 21000
 ribbon:
   ConnectTimeout: 5000
   ReadTimeout: 5000
+
+# expose actuator for SBA
+management:
+  endpoints:
+    web.exposure.exclude: "*"
+  endpoint:
+    health:
+      show-details: never
