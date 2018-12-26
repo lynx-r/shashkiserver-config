@@ -10,7 +10,8 @@ spring:
             allowedOrigins:
               - "http://localhost:4200"
               - "http://localhost:4000"
-              - "http://shashki.online"
+              - "https://www.shashki.online"
+              - "https://shashki.online"
             allowedHeaders:
               - Content-Type
               - Authorization
