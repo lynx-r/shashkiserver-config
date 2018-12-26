@@ -1,0 +1,13 @@
+guestName: anonymous
+
+appclients:
+  clients:
+    - username: actuator
+      password: "{cipher}0be8db7b852008bd5671b89761885647d2ea94a70bac81b8bbfd1fb7787793af6b100c16693e202d1a55b06b0584bdf4"
+      roles: SYSTEM
+    - username: admin
+      password: "{cipher}908c1ad359a9203174a29e72183a8b764f9798db6989fe3f8d61042ca9789bb51b6d8599b61e60f26b6541295e76509f"
+      roles: USER,ADMIN
+    - username: anonymous
+      password: "{cipher}944056c49c113d39cc7f9c4a4c5286bc8f379b5b2cde68bbf3487e359dfcb4b2"
+      roles: GUEST
