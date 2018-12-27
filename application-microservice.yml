@@ -1,3 +1,5 @@
+guestName: anonymous
+
 appclients:
   clients:
     - username: actuator
