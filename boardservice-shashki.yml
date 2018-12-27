@@ -15,11 +15,3 @@ eureka:
     metadata-map:
       user.name: "actuator"
       user.password: "{cipher}0be8db7b852008bd5671b89761885647d2ea94a70bac81b8bbfd1fb7787793af6b100c16693e202d1a55b06b0584bdf4"
-
-#Setting logging levels
-logging:
-  level:
-    com.netflix: ERROR
-    org.springframework.web: ERROR
-    org.springframework.security: ERROR
-    com.tictactoecorp: DEBUG
