@@ -20,7 +20,7 @@ spring:
               - POST
               - PUT
       routes:
-        - id: editservice
+        - id: editservice-shashki
           uri: lb://editservice
           predicates:
             - Path=/edit/**
