@@ -8,10 +8,3 @@ spring:
       host: ${MONGO_HOST:localhost}
       database: ${MONGO_DATABASE:shashki}
       port: ${MONGO_PORT:27017}
-
-eureka:
-  instance:
-    # to allow SBA access this service
-    metadata-map:
-      user.name: "actuator"
-      user.password: "{cipher}0be8db7b852008bd5671b89761885647d2ea94a70bac81b8bbfd1fb7787793af6b100c16693e202d1a55b06b0584bdf4"

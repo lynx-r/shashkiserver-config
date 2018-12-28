@@ -32,6 +32,13 @@ ribbon:
   ConnectTimeout: 5000
   ReadTimeout: 5000
 
+eureka:
+  instance:
+    # to allow SBA access this service
+    metadata-map:
+      user.name: "actuator"
+      user.password: "{cipher}a4b40ea05df6dd7eb0d2d0504958585359f410d49441742accded740a20096e7"
+
 # expose actuator for SBA
 management:
   endpoints:
