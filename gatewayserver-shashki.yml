@@ -26,6 +26,18 @@ spring:
             - Path=/edit/**
           filters:
             - StripPrefix=1
+        - id: articleservice-shashki
+          uri: lb://articleservice-shashki
+          predicates:
+            - Path=/article/**
+          filters:
+            - StripPrefix=1
+        - id: boardservice-shashki
+          uri: lb://boardservice-shashki
+          predicates:
+            - Path=/board/**
+          filters:
+            - StripPrefix=1
 
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 21000
 ribbon:

@@ -18,4 +18,3 @@ appclients:
     - username: anonymous
       password: "{cipher}944056c49c113d39cc7f9c4a4c5286bc8f379b5b2cde68bbf3487e359dfcb4b2"
       roles: GUEST
-
