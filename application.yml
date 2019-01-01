@@ -11,6 +11,8 @@ management:
       show-details: ALWAYS
 
 spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:default}
   zipkin:
     baseUrl:  ${ZIPKIN_URL:http://localhost:9411}
   jmx:
