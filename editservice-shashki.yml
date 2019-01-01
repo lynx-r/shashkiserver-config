@@ -3,7 +3,6 @@ server.port: ${WEBAPI_PORT:40010}
 spring:
   profiles:
     include: microservice
-    active: ${EDIT_ACTIVE_PROFILE:default}
   data:
     mongodb:
       host: ${MONGO_HOST:localhost}

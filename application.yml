@@ -12,7 +12,7 @@ management:
 
 spring:
   profiles:
-    active: ${ACTIVE_PROFILE:default}
+    active: default
   zipkin:
     baseUrl:  ${ZIPKIN_URL:http://localhost:9411}
   jmx:
