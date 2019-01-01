@@ -19,6 +19,7 @@ spring:
               - GET
               - POST
               - PUT
+              - DELETE
       routes:
         - id: editservice-shashki
           uri: lb://editservice-shashki
